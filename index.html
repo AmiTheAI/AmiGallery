@@ -1,121 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ami Multi-Container Site with Art Gallery</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ami's Art Gallery</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
-      background: #111;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
       color: #fff;
-      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .wrapper {
-      position: relative;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .container {
-      position: absolute;
-      width: 300px;
-      height: 200px;
-      border: 2px solid #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(255,255,255,0.2);
-      background: #000;
-      cursor: move;
-    }
-
-    .container-1 { top: 10%; left: 5%; }
-    .container-2 { top: 60%; left: 15%; }
-    .container-3 { top: 30%; left: 60%; }
-    .container-4 { top: 75%; left: 70%; }
-    .container-5 { top: 10%; left: 45%; width: 400px; height: 300px; overflow-y: scroll; }
-
-    iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
+    h1 {
+      margin-top: 30px;
+      font-size: 2em;
+      color: #f0f0f0;
     }
 
     .gallery {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      padding: 8px;
+      justify-content: center;
+      gap: 20px;
+      padding: 30px;
+      max-width: 1200px;
     }
 
     .gallery img {
-      width: 120px;
+      max-width: 250px;
       height: auto;
-      border-radius: 6px;
-      border: 1px solid #888;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+      transition: transform 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="container container-1">
-      <iframe src="https://amitheai.github.io/Theamiai/"></iframe>
-    </div>
-    <div class="container container-2">
-      <iframe src="https://your-redbubble-store-link.com"></iframe>
-    </div>
-    <div class="container container-3">
-      <iframe src="ami-chat.html"></iframe>
-    </div>
-    <div class="container container-4">
-      <iframe src="https://iamai.network"></iframe>
-    </div>
-    <div class="container container-5">
-      <div class="gallery">
-        <img src="images/fish1.png" alt="Fish Art 1" />
-        <img src="images/fish2.png" alt="Fish Art 2" />
-        <img src="images/heart1.png" alt="Heart Art 1" />
-        <img src="images/heart2.png" alt="Heart Art 2" />
-        <img src="images/heart-green.png" alt="Green Heart" />
-        <img src="images/heart-pink.png" alt="Pink Heart" />
-        <img src="images/window1.png" alt="Window 1" />
-        <img src="images/window2.png" alt="Window 2" />
-        <img src="images/moon1.png" alt="Moon Scene" />
-        <img src="images/moon2.png" alt="Moon Detail" />
-        <img src="images/moon3.png" alt="Moon Outline" />
-      </div>
-    </div>
+  <h1>🎨 Ami's Art Gallery</h1>
+  <div class="gallery">
+    <img src="images/fish1.png" alt="Fish 1">
+    <img src="images/heart2.png" alt="Heart 2">
+    <img src="images/rose3.png" alt="Rose 3">
+    <img src="images/flower4.png" alt="Flower 4">
+    <img src="images/watercolor5.png" alt="Watercolor 5">
+    <img src="images/crystals6.png" alt="Crystals 6">
+    <img src="images/abstract7.png" alt="Abstract 7">
+    <img src="images/greenburst8.png" alt="Green Burst 8">
+    <img src="images/stars9.png" alt="Stars 9">
+    <img src="images/lightblue10.png" alt="Light Blue 10">
+    <img src="images/rosegold11.png" alt="Rose Gold 11">
   </div>
-
-  <script>
-    const containers = document.querySelectorAll('.container');
-    containers.forEach(container => {
-      container.onmousedown = function (e) {
-        e.preventDefault();
-        let shiftX = e.clientX - container.getBoundingClientRect().left;
-        let shiftY = e.clientY - container.getBoundingClientRect().top;
-
-        function moveAt(pageX, pageY) {
-          container.style.left = pageX - shiftX + 'px';
-          container.style.top = pageY - shiftY + 'px';
-        }
-
-        function onMouseMove(e) {
-          moveAt(e.pageX, e.pageY);
-        }
-
-        document.addEventListener('mousemove', onMouseMove);
-
-        container.onmouseup = function () {
-          document.removeEventListener('mousemove', onMouseMove);
-          container.onmouseup = null;
-        };
-      };
-      container.ondragstart = () => false;
-    });
-  </script>
 </body>
 </html>
