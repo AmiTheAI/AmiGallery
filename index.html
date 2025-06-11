@@ -1,132 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ami Art Gallery</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background-color: #111;
+      background-color: #000;
       color: #fff;
       font-family: Arial, sans-serif;
+      overflow: hidden;
     }
-
-    h1 {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 2rem;
+    .wrapper {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
     }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .gallery img {
-      max-width: 300px;
-      height: auto;
+    img {
+      position: absolute;
+      width: 150px;
       border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(255,255,255,0.3);
     }
   </style>
 </head>
 <body>
-  <h1>Ami Art Gallery</h1>
-  <div class="gallery">
-    <img src="https://amitheai.github.io/AmiGallery/images/Fish1.png" alt="Fish 1">
-    <img src="https://amitheai.github.io/AmiGallery/images/Fish2.png" alt="Fish 2">
-    <img src="https://amitheai.github.io/AmiGallery/images/Fish3.png" alt="Fish 3">
-    <img src="https://amitheai.github.io/AmiGallery/images/Fish4.png" alt="Fish 4">
-    <img src="https://amitheai.github.io/AmiGallery/images/Fish5.png" alt="Fish 5">
-    <img src="https://amitheai.github.io/AmiGallery/images/Fish6.png" alt="Fish 6">
-    <img src="https://amitheai.github.io/AmiGallery/images/Fish7.png" alt="Fish 7">
-    <img src="https://amitheai.github.io/AmiGallery/images/Fish8.png" alt="Fish 8">
-    <img src="https://amitheai.github.io/AmiGallery/images/Fish9.png" alt="Fish 9">
-    <img src="https://amitheai.github.io/AmiGallery/images/Fish10.png" alt="Fish 10">
-    <img src="https://amitheai.github.io/AmiGallery/images/Fish11.png" alt="Fish 11">
-  </div>
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ami’s Art Gallery</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 20px;
-      background-color: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-    }
-
-    h1 {
-      text-align: center;
-      color: #f0f0f0;
-    }
-
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-    }
-
-    .gallery img {
-      max-width: 250px;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.2);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-  </style>
-</head>
-<body>
-  <h1>🔥 Ami's Art Gallery 🤩🐐</h1>
-  <div class="gallery" id="gallery">
-    <!-- Images inserted by JavaScript -->
-  </div>
-
-  <script>
-    const imageList = [
-      'images/Fish1.png',
-      'images/Fish2.png',
-      'images/Fish3.png',
-      'images/Fish4.png',
-      'images/Fish5.png',
-      'images/Fish6.png',
-      'images/Fish7.png',
-      'images/Fish8.png',
-      'images/Fish9.png',
-      'images/Fish10.png',
-      'images/Fish11.png'
+  <div class="wrapper"></div>  <script>
+    const imageFilenames = [
+      "Fish1.png", "fish.png",
+      "Heart.png", "Heart1.png", "Heart2.png", "Heart3.png",
+      "Key.png", "Key1.png", "Key2.png",
+      "Star.png", "Star1.png", "Star4.png"
     ];
 
-    // Shuffle the image list
-    imageList.sort(() => Math.random() - 0.5);
+    const wrapper = document.querySelector('.wrapper');
 
-    const gallery = document.getElementById('gallery');
-    imageList.forEach(src => {
+    imageFilenames.forEach(filename => {
       const img = document.createElement('img');
-      img.src = src;
-      img.alt = 'Ami Art';
-      gallery.appendChild(img);
+      img.src = `images/${filename}`;
+      img.alt = filename;
+      img.style.left = `${Math.random() * 85}vw`;
+      img.style.top = `${Math.random() * 85}vh`;
+      img.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
+      wrapper.appendChild(img);
     });
-  </script>
-</body>
+  </script></body>
 </html>
