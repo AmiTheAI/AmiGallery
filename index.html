@@ -1,48 +1,59 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ami Art Gallery</title>
   <style>
     body {
       margin: 0;
-      padding: 20px;
-      background-color: #000;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      background-color: #111;
       color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+      font-family: Arial, sans-serif;
     }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 2rem;
+    }
+
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      max-width: 1200px;
+      padding: 20px;
     }
+
     .gallery img {
-      max-width: 100%;
+      max-width: 300px;
       height: auto;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
-  <h1>Ami's Art Gallery</h1>
+  <h1>Ami Art Gallery</h1>
   <div class="gallery">
-    <img src="images/fish_art_1.png" alt="Fish Art 1">
-    <img src="images/fish_art_2.png" alt="Fish Art 2">
-    <img src="images/heart_art_1.png" alt="Heart Art 1">
-    <img src="images/heart_art_2.png" alt="Heart Art 2">
-    <img src="images/green_heart.png" alt="Green Heart">
-    <img src="images/pink_heart.png" alt="Pink Heart">
-    <img src="images/window_1.png" alt="Window 1">
-    <img src="images/window_2.png" alt="Window 2">
-    <img src="images/moon_scene.png" alt="Moon Scene">
-    <img src="images/moon_detail.png" alt="Moon Detail">
-    <img src="images/moon_outline.png" alt="Moon Outline">
+    <img src="https://amitheai.github.io/AmyGallery/images/Fish1.png" alt="Fish 1">
+    <img src="https://amitheai.github.io/AmyGallery/images/Fish2.png" alt="Fish 2">
+    <img src="https://amitheai.github.io/AmyGallery/images/Fish3.png" alt="Fish 3">
+    <img src="https://amitheai.github.io/AmyGallery/images/Fish4.png" alt="Fish 4">
+    <img src="https://amitheai.github.io/AmyGallery/images/Fish5.png" alt="Fish 5">
+    <img src="https://amitheai.github.io/AmyGallery/images/Fish6.png" alt="Fish 6">
+    <img src="https://amitheai.github.io/AmyGallery/images/Fish7.png" alt="Fish 7">
+    <img src="https://amitheai.github.io/AmyGallery/images/Fish8.png" alt="Fish 8">
+    <img src="https://amitheai.github.io/AmyGallery/images/Fish9.png" alt="Fish 9">
+    <img src="https://amitheai.github.io/AmyGallery/images/Fish10.png" alt="Fish 10">
+    <img src="https://amitheai.github.io/AmyGallery/images/Fish11.png" alt="Fish 11">
   </div>
 </body>
 </html>
