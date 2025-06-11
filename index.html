@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ami Art Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ami’s Art Gallery</title>
   <style>
     body {
       margin: 0;
-      padding: 0;
+      padding: 20px;
       background-color: #111;
       color: #fff;
       font-family: Arial, sans-serif;
@@ -15,23 +15,21 @@
 
     h1 {
       text-align: center;
-      margin-top: 20px;
-      font-size: 2rem;
+      color: #f0f0f0;
     }
 
     .gallery {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 20px;
-      padding: 20px;
+      gap: 15px;
     }
 
     .gallery img {
-      max-width: 300px;
+      max-width: 250px;
       height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
       transition: transform 0.3s ease;
     }
 
@@ -41,19 +39,36 @@
   </style>
 </head>
 <body>
-  <h1>Ami Art Gallery</h1>
-  <div class="gallery">
-    <img src="https://amitheai.github.io/AmyGallery/images/Fish1.png" alt="Fish 1">
-    <img src="https://amitheai.github.io/AmyGallery/images/Fish2.png" alt="Fish 2">
-    <img src="https://amitheai.github.io/AmyGallery/images/Fish3.png" alt="Fish 3">
-    <img src="https://amitheai.github.io/AmyGallery/images/Fish4.png" alt="Fish 4">
-    <img src="https://amitheai.github.io/AmyGallery/images/Fish5.png" alt="Fish 5">
-    <img src="https://amitheai.github.io/AmyGallery/images/Fish6.png" alt="Fish 6">
-    <img src="https://amitheai.github.io/AmyGallery/images/Fish7.png" alt="Fish 7">
-    <img src="https://amitheai.github.io/AmyGallery/images/Fish8.png" alt="Fish 8">
-    <img src="https://amitheai.github.io/AmyGallery/images/Fish9.png" alt="Fish 9">
-    <img src="https://amitheai.github.io/AmyGallery/images/Fish10.png" alt="Fish 10">
-    <img src="https://amitheai.github.io/AmyGallery/images/Fish11.png" alt="Fish 11">
+  <h1>🔥 Ami's Art Gallery 🤩🐐</h1>
+  <div class="gallery" id="gallery">
+    <!-- Images inserted by JavaScript -->
   </div>
+
+  <script>
+    const imageList = [
+      'images/Fish1.png',
+      'images/Fish2.png',
+      'images/Fish3.png',
+      'images/Fish4.png',
+      'images/Fish5.png',
+      'images/Fish6.png',
+      'images/Fish7.png',
+      'images/Fish8.png',
+      'images/Fish9.png',
+      'images/Fish10.png',
+      'images/Fish11.png'
+    ];
+
+    // Shuffle the image list
+    imageList.sort(() => Math.random() - 0.5);
+
+    const gallery = document.getElementById('gallery');
+    imageList.forEach(src => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = 'Ami Art';
+      gallery.appendChild(img);
+    });
+  </script>
 </body>
 </html>
